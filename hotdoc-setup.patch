@@ -1,0 +1,12 @@
+--- hotdoc-0.10.0/setup.py.orig	2019-08-18 00:54:00.000000000 +0200
++++ hotdoc-0.10.0/setup.py	2020-09-11 06:33:51.916754338 +0200
+@@ -373,7 +373,8 @@
+         src_dir = os.path.dirname (self.__flex_sources[0])
+         built_scanner_path = src(os.path.join (src_dir, 'scanner.c'))
+ 
+-        self.sources.append(built_scanner_path)
++        if built_scanner_path not in self.sources:
++            self.sources.append(built_scanner_path)
+         if newer_group(self.__flex_sources, built_scanner_path):
+             cmd = ['flex', '-o', built_scanner_path]
+             for s in self.__flex_sources:
