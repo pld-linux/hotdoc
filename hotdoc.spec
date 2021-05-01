@@ -5,19 +5,19 @@
 Summary:	A documentation tool micro-framework
 Summary(pl.UTF-8):	Mikroszkielet narzędzia do tworzenia dokumentacji
 Name:		hotdoc
-Version:	0.10.0
+Version:	0.13.3
 Release:	0.1
 License:	LGPL v2.1+
 Group:		Development/Tools
 #Source0Download: https://github.com/hotdoc/hotdoc/releases
 Source0:	https://github.com/hotdoc/hotdoc/archive/%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	7ece3cc130cf220a057669753ea822d4
-Source1:	https://github.com/MathieuDuponchelle/cmark/archive/7e5438a/cmark-7e5438a.tar.gz
-# Source1-md5:	6d90c8153c0c16f467e46b4e0cbfca59
+# Source0-md5:	9ddff982abb44a31c9c03b7ea00fdaad
+Source1:	https://github.com/MathieuDuponchelle/cmark/archive/db73e39/cmark-db73e39.tar.gz
+# Source1-md5:	8b7647adcf770ae012e8594fba2a7916
 Source2:	https://github.com/PrismJS/prism/archive/eccf09f/prism-eccf09f.tar.gz
 # Source2-md5:	bf45a06cebc01ef5f36b4521bf97b410
-Source3:	https://github.com/hotdoc/hotdoc_bootstrap_theme/archive/da9b877/hotdoc_bootstrap_theme-da9b877.tar.gz
-# Source3-md5:	e932cf06b825291f679af22235480987
+Source3:	https://github.com/hotdoc/hotdoc_bootstrap_theme/archive/89e04ee/hotdoc_bootstrap_theme-89e04ee.tar.gz
+# Source3-md5:	504d2876b68042dbbbb45bcd99dc2079
 Patch0:		%{name}-setup.patch
 URL:		https://hotdoc.github.io/
 BuildRequires:	cmake >= 2.8.9
@@ -30,6 +30,7 @@ BuildRequires:	pkgconfig
 BuildRequires:	python3 >= 1:3.4
 BuildRequires:	python3-modules >= 1:3.4
 BuildRequires:	python3-setuptools
+BuildRequires:	python3-wheel
 #Requires:	python3-PyYAML >= 5.1, python3-lxml, python3-schema, python3-appdirs, python3-wheezy.template = 0.1.167, python3-toposort >= 1.4, python3-xdg >= 4.0.0, python3-dbus-deviation >= 0.4.0
 #Requires:	python3-pkgconfig = 1.1.0, python3-cchardet, python3-networkx = 1.11
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
