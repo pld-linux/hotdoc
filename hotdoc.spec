@@ -1,3 +1,4 @@
+# TODO: allow build without network (npm install)
 #
 # Condional build:
 %bcond_without	tests	# unit tests
@@ -27,12 +28,21 @@ BuildRequires:	json-glib-devel
 BuildRequires:	libxml2-devel >= 2.0
 BuildRequires:	npm
 BuildRequires:	pkgconfig
-BuildRequires:	python3 >= 1:3.4
-BuildRequires:	python3-modules >= 1:3.4
+BuildRequires:	python3 >= 1:3.5
+BuildRequires:	python3-modules >= 1:3.5
 BuildRequires:	python3-setuptools
 BuildRequires:	python3-wheel
-#Requires:	python3-PyYAML >= 5.1, python3-lxml, python3-schema, python3-appdirs, python3-wheezy.template = 0.1.167, python3-toposort >= 1.4, python3-xdg >= 4.0.0, python3-dbus-deviation >= 0.4.0
-#Requires:	python3-pkgconfig = 1.1.0, python3-cchardet, python3-networkx = 1.11
+# runtime dependencies, but required at build time to avoid fetching wheels from network
+BuildRequires:	python3-PyYAML >= 5.1
+BuildRequires:	python3-appdirs
+BuildRequires:	python3-cchardet
+BuildRequires:	python3-dbus-deviation >= 0.4.0
+BuildRequires:	python3-lxml
+BuildRequires:	python3-networkx >= 2.5
+BuildRequires:	python3-pkgconfig
+BuildRequires:	python3-schema
+BuildRequires:	python3-toposort >= 1.4
+BuildRequires:	python3-wheezy.template
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
