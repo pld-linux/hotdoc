@@ -2,6 +2,7 @@
 #
 # Condional build:
 %bcond_without	tests	# unit tests
+%bcond_with	npm	# bootstrap with npm
 
 Summary:	A documentation tool micro-framework
 Summary(pl.UTF-8):	Mikroszkielet narzędzia do tworzenia dokumentacji
@@ -19,6 +20,9 @@ Source2:	https://github.com/PrismJS/prism/archive/eccf09f/prism-eccf09f.tar.gz
 # Source2-md5:	bf45a06cebc01ef5f36b4521bf97b410
 Source3:	https://github.com/hotdoc/hotdoc_bootstrap_theme/archive/89e04ee/hotdoc_bootstrap_theme-89e04ee.tar.gz
 # Source3-md5:	504d2876b68042dbbbb45bcd99dc2079
+# compressed hotdoc/hotdoc_bootstrap_theme/dist after bootstrapping npm with network (node_modules not needed?)
+Source4:	hotdoc-%{version}-hotdoc_bootstrap_theme-dist.tar.xz
+# Source4-md5:	d7907f232dbdc910457a20d445609165
 Patch0:		%{name}-setup.patch
 URL:		https://hotdoc.github.io/
 BuildRequires:	cmake >= 2.8.9
@@ -26,7 +30,7 @@ BuildRequires:	flex
 BuildRequires:	glib2-devel >= 2.0
 BuildRequires:	json-glib-devel
 BuildRequires:	libxml2-devel >= 2.0
-BuildRequires:	npm
+%{?with_npm:BuildRequires:	npm}
 BuildRequires:	pkgconfig
 BuildRequires:	python3 >= 1:3.5
 BuildRequires:	python3-modules >= 1:3.5
@@ -62,6 +66,10 @@ itp.).
 %{__mv} cmark-*/* cmark
 %{__mv} prism-*/* hotdoc/extensions/syntax_highlighting/prism
 %{__mv} hotdoc_bootstrap_theme-*/* hotdoc/hotdoc_bootstrap_theme
+
+%if %{without npm}
+%{__tar} xf %{SOURCE4}
+%endif
 
 %{__sed} -i -e '1s, /usr/bin/env sh,/bin/sh,' hotdoc/extensions/gi/transition_scripts/translate_sections.sh
 
