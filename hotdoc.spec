@@ -8,7 +8,7 @@ Summary:	A documentation tool micro-framework
 Summary(pl.UTF-8):	Mikroszkielet narzędzia do tworzenia dokumentacji
 Name:		hotdoc
 Version:	0.13.3
-Release:	1
+Release:	2
 License:	LGPL v2.1+
 Group:		Development/Tools
 #Source0Download: https://github.com/hotdoc/hotdoc/releases
@@ -24,6 +24,7 @@ Source3:	https://github.com/hotdoc/hotdoc_bootstrap_theme/archive/89e04ee/hotdoc
 Source4:	hotdoc-%{version}-hotdoc_bootstrap_theme-dist.tar.xz
 # Source4-md5:	d7907f232dbdc910457a20d445609165
 Patch0:		%{name}-setup.patch
+Patch1:		clang_libdir.patch
 URL:		https://hotdoc.github.io/
 BuildRequires:	cmake >= 2.8.9
 BuildRequires:	flex
@@ -47,6 +48,10 @@ BuildRequires:	python3-pkgconfig
 BuildRequires:	python3-schema
 BuildRequires:	python3-toposort >= 1.4
 BuildRequires:	python3-wheezy.template
+# libclang.so dlopen in c extension
+Requires:	clang-devel
+# llvm-config in c extension
+Requires:	llvm-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -62,6 +67,7 @@ itp.).
 %prep
 %setup -q -a1 -a2 -a3
 %patch0 -p1
+%patch1 -p1
 
 %{__mv} cmark-*/* cmark
 %{__mv} prism-*/* hotdoc/extensions/syntax_highlighting/prism
