@@ -7,22 +7,22 @@
 Summary:	A documentation tool micro-framework
 Summary(pl.UTF-8):	Mikroszkielet narzędzia do tworzenia dokumentacji
 Name:		hotdoc
-Version:	0.13.3
-Release:	5
+Version:	0.13.7
+Release:	1
 License:	LGPL v2.1+
 Group:		Development/Tools
-#Source0Download: https://github.com/hotdoc/hotdoc/releases
+#Source0Download: https://github.com/hotdoc/hotdoc/tags
 Source0:	https://github.com/hotdoc/hotdoc/archive/%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	9ddff982abb44a31c9c03b7ea00fdaad
-Source1:	https://github.com/MathieuDuponchelle/cmark/archive/db73e39/cmark-db73e39.tar.gz
-# Source1-md5:	8b7647adcf770ae012e8594fba2a7916
+# Source0-md5:	899f60d9fd38baff5fb9d531e15c9ed6
+Source1:	https://github.com/MathieuDuponchelle/cmark/archive/b548e6f/cmark-b548e6f.tar.gz
+# Source1-md5:	e0e3f082400d34ddc5b748989b22dc5b
 Source2:	https://github.com/PrismJS/prism/archive/eccf09f/prism-eccf09f.tar.gz
 # Source2-md5:	bf45a06cebc01ef5f36b4521bf97b410
-Source3:	https://github.com/hotdoc/hotdoc_bootstrap_theme/archive/89e04ee/hotdoc_bootstrap_theme-89e04ee.tar.gz
-# Source3-md5:	504d2876b68042dbbbb45bcd99dc2079
+Source3:	https://github.com/hotdoc/hotdoc_bootstrap_theme/archive/8b7d6d3/hotdoc_bootstrap_theme-8b7d6d3.tar.gz
+# Source3-md5:	bac40df38923d8c5692200961d1aa807
 # compressed hotdoc/hotdoc_bootstrap_theme/dist after bootstrapping npm with network (node_modules not needed?)
 Source4:	hotdoc-%{version}-hotdoc_bootstrap_theme-dist.tar.xz
-# Source4-md5:	d7907f232dbdc910457a20d445609165
+# Source4-md5:	4c6e683f550030993fba5a22e358a38b
 Patch0:		%{name}-setup.patch
 Patch1:		clang_libdir.patch
 URL:		https://hotdoc.github.io/
