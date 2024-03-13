@@ -1,8 +1,8 @@
---- hotdoc-0.10.0/setup.py.orig	2019-08-18 00:54:00.000000000 +0200
-+++ hotdoc-0.10.0/setup.py	2020-09-11 06:33:51.916754338 +0200
-@@ -373,7 +373,8 @@
-         src_dir = os.path.dirname (self.__flex_sources[0])
-         built_scanner_path = src(os.path.join (src_dir, 'scanner.c'))
+--- hotdoc-0.16/setup.py.orig	2023-11-09 15:08:48.000000000 +0100
++++ hotdoc-0.16/setup.py	2024-03-13 19:08:01.337366694 +0100
+@@ -361,7 +361,8 @@ class FlexExtension (Extension):
+         src_dir = os.path.dirname(self.__flex_sources[0])
+         built_scanner_path = src(os.path.join(src_dir, 'scanner.c'))
  
 -        self.sources.append(built_scanner_path)
 +        if built_scanner_path not in self.sources:

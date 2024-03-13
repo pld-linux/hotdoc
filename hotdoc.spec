@@ -7,22 +7,22 @@
 Summary:	A documentation tool micro-framework
 Summary(pl.UTF-8):	Mikroszkielet narzędzia do tworzenia dokumentacji
 Name:		hotdoc
-Version:	0.14.0
+Version:	0.16
 Release:	1
 License:	LGPL v2.1+
 Group:		Development/Tools
 #Source0Download: https://github.com/hotdoc/hotdoc/tags
 Source0:	https://github.com/hotdoc/hotdoc/archive/%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	45374acdd7e720a4461d0ad5b7300008
+# Source0-md5:	a14a38e7950c8056c88f0e131429b38f
 Source1:	https://github.com/MathieuDuponchelle/cmark/archive/b548e6f/cmark-b548e6f.tar.gz
 # Source1-md5:	e0e3f082400d34ddc5b748989b22dc5b
 Source2:	https://github.com/PrismJS/prism/archive/eccf09f/prism-eccf09f.tar.gz
 # Source2-md5:	bf45a06cebc01ef5f36b4521bf97b410
-Source3:	https://github.com/hotdoc/hotdoc_bootstrap_theme/archive/4b33630/hotdoc_bootstrap_theme-4b33630.tar.gz
-# Source3-md5:	a9a83a80b5f84a8860e9689937dc3e1f
+Source3:	https://github.com/hotdoc/hotdoc_bootstrap_theme/archive/ba24bed/hotdoc_bootstrap_theme-ba24bed.tar.gz
+# Source3-md5:	a9cb2c938ea1712c71e0ba7c4797b94e
 # compressed hotdoc/hotdoc_bootstrap_theme/dist after bootstrapping npm with network (node_modules not needed?)
 Source4:	hotdoc-%{version}-hotdoc_bootstrap_theme-dist.tar.xz
-# Source4-md5:	482aad21167fe84bd06fe219ef8ec17f
+# Source4-md5:	38a5d173bf901dc1697e65760883a03b
 Patch0:		%{name}-setup.patch
 Patch1:		clang_libdir.patch
 URL:		https://hotdoc.github.io/
@@ -38,10 +38,10 @@ BuildRequires:	python3-modules >= 1:3.5
 BuildRequires:	python3-setuptools
 BuildRequires:	python3-wheel
 # runtime dependencies, but required at build time to avoid fetching wheels from network
-BuildRequires:	python3-PyYAML >= 5.1
+BuildRequires:	python3-PyYAML >= 6
 BuildRequires:	python3-appdirs
-BuildRequires:	python3-charset_normalizer
 BuildRequires:	python3-dbus-deviation >= 0.4.0
+BuildRequires:	python3-faust-cchardet
 BuildRequires:	python3-feedgen
 BuildRequires:	python3-lxml
 BuildRequires:	python3-networkx >= 2.5
