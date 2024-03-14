@@ -1,0 +1,13 @@
+Tag <callback> might appear also as further (not just the first) node within <field>
+(causing hotdoc to crash after not finding <type> in such <field> node)
+--- hotdoc-0.16/hotdoc/extensions/gi/gi_extension.py.orig	2023-11-09 15:08:48.000000000 +0100
++++ hotdoc-0.16/hotdoc/extensions/gi/gi_extension.py	2024-03-14 19:43:28.904438367 +0100
+@@ -350,7 +350,7 @@ class GIExtension(Extension):
+             if field.attrib.get('private', False):
+                 continue
+ 
+-            if children[0].tag == core_ns('callback'):
++            if any(child.tag == core_ns('callback') for child in children):
+                 continue
+ 
+             type_desc = type_description_from_node(field)

@@ -25,6 +25,7 @@ Source4:	hotdoc-%{version}-hotdoc_bootstrap_theme-dist.tar.xz
 # Source4-md5:	38a5d173bf901dc1697e65760883a03b
 Patch0:		%{name}-setup.patch
 Patch1:		clang_libdir.patch
+Patch2:		%{name}-callback-field.patch
 URL:		https://hotdoc.github.io/
 BuildRequires:	cmake >= 2.8.9
 BuildRequires:	flex
@@ -69,6 +70,7 @@ itp.).
 %setup -q -a1 -a2 -a3
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %{__mv} cmark-*/* cmark
 %{__mv} prism-*/* hotdoc/extensions/syntax_highlighting/prism
