@@ -8,7 +8,7 @@ Summary:	A documentation tool micro-framework
 Summary(pl.UTF-8):	Mikroszkielet narzędzia do tworzenia dokumentacji
 Name:		hotdoc
 Version:	0.16
-Release:	
+Release:	2
 License:	LGPL v2.1+
 Group:		Development/Tools
 #Source0Download: https://github.com/hotdoc/hotdoc/tags
@@ -68,9 +68,9 @@ itp.).
 
 %prep
 %setup -q -a1 -a2 -a3
-%patch0 -p1
-%patch1 -p1
-%patch2 -p1
+%patch -P 0 -p1
+%patch -P 1 -p1
+%patch -P 2 -p1
 
 %{__mv} cmark-*/* cmark
 %{__mv} prism-*/* hotdoc/extensions/syntax_highlighting/prism
