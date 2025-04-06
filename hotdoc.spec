@@ -8,7 +8,7 @@ Summary:	A documentation tool micro-framework
 Summary(pl.UTF-8):	Mikroszkielet narzędzia do tworzenia dokumentacji
 Name:		hotdoc
 Version:	0.16
-Release:	3
+Release:	4
 License:	LGPL v2.1+
 Group:		Development/Tools
 #Source0Download: https://github.com/hotdoc/hotdoc/tags
@@ -49,7 +49,8 @@ BuildRequires:	python3-networkx >= 2.5
 BuildRequires:	python3-pkgconfig
 BuildRequires:	python3-schema
 BuildRequires:	python3-toposort >= 1.4
-BuildRequires:	python3-wheezy.template
+# fails on python3.13 with wheezy.template 3.1.0
+BuildRequires:	python3-wheezy.template >= 3.2
 Requires:	clang
 # libclang.so dlopen in c extension
 Requires:	clang-devel
