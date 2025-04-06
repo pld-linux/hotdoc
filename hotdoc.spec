@@ -50,6 +50,7 @@ BuildRequires:	python3-pkgconfig
 BuildRequires:	python3-schema
 BuildRequires:	python3-toposort >= 1.4
 BuildRequires:	python3-wheezy.template
+Requires:	clang
 # libclang.so dlopen in c extension
 Requires:	clang-devel
 # llvm-config in c extension
