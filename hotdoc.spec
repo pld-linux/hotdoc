@@ -8,7 +8,7 @@ Summary:	A documentation tool micro-framework
 Summary(pl.UTF-8):	Mikroszkielet narzędzia do tworzenia dokumentacji
 Name:		hotdoc
 Version:	0.16
-Release:	4
+Release:	5
 License:	LGPL v2.1+
 Group:		Development/Tools
 #Source0Download: https://github.com/hotdoc/hotdoc/tags
